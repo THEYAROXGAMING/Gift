@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Card</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Quicksand:wght@500&family=Dancing+Script&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="card-container">
+        <div class="card-content">
+            <h1 class="greeting">Happy Birthday, Briii!</h1>
+            <!-- Hidden Birthday Message -->
+            <p class="message" id="birthday-message" style="display: none;">🎉🎂 ¡Feliz 19º cumpleaños, Bri! 🎂🎉
+
+¡Wow, no puedo creer que ya tengas 19 años! re legal ahora😏🤣 💖 ¡Parece que fue ayer cuando nos reíamos juntas por cosas tontas, y ahora estás convirtiéndote en una persona increíble, fuerte y hermosa! 🌟
+
+Soy tan afortunada de tenerte en mi vida, ¡haces cada día más brillante con tu amabilidad, tu sentido del humor y tu corazón tan grande! 🥰 Te mereces toda la felicidad, el amor y el éxito del mundo hoy y siempre. 💕 Que este año te traiga aventuras inolvidables, risas que llenen tu alma y recuerdos que duren toda la vida. ✨🌍
+
+Recuerda, sin importar a dónde te lleve la vida, siempre estaré aquí, apoyándote y celebrando cada paso del camino. 🎈👯‍♀️
+
+Te deseo un año increíble por delante, lleno de sueños cumplidos, amor y alegría sin fin. 🥳 ¡Vas a hacer cosas increíbles, estoy segura de ello! 💪
+
+¡Te quiero hasta la luna y de regreso! 🚀💖</p>
+            <div class="quote">
+                <p>"May your birthday be the start of a year filled with happiness, love, and amazing memories!"</p>
+            </div>
+            <!-- Button to reveal the birthday message -->
+            <button class="reveal-message-btn" id="reveal-btn">Reveal Birthday Message</button>
+            
+            <!-- Personal Message Section -->
+            <div class="personal-message">
+                <p>Personal Message: <span id="personal-message"></span></p>
+                <input type="text" id="message-input" placeholder="Write your message here..." />
+                <button onclick="displayMessage()">Send Message</button>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <!-- Play Birthday Song Button -->
+            <button id="play-audio">Play Birthday Song 🎶</button>
+
+            <!-- Mute/Unmute Button -->
+            <button id="mute-button">Mute</button>
+
+            <!-- Audio Element for Birthday Song -->
+            <audio id="birthday-audio" src="https://www.bensound.com/bensound-music/bensound-happiness.mp3"></audio>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
