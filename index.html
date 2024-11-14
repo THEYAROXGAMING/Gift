@@ -5,7 +5,126 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Birthday Card</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Quicksand:wght@500&family=Dancing+Script&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Reset and Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f9f1f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        /* Card Styles */
+        .card-container {
+            background: linear-gradient(to right, #f8c9e6, #d4b1e1);
+            border-radius: 20px;
+            padding: 30px;
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-content h1 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3em;
+            color: #6a2c8a;
+            margin-bottom: 20px;
+            animation: glow 1.5s ease-in-out infinite alternate;
+        }
+
+        .card-content p, .quote p {
+            font-family: 'Quicksand', sans-serif;
+            font-size: 1.2em;
+            color: #4a4a4a;
+            margin-bottom: 15px;
+        }
+
+        .reveal-message-btn {
+            padding: 10px 20px;
+            background-color: #d79be1;
+            border: none;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .reveal-message-btn:hover {
+            background-color: #6a2c8a;
+        }
+
+        .personal-message {
+            margin-top: 20px;
+            display: none;
+        }
+
+        .personal-message input {
+            width: 80%;
+            padding: 8px;
+            margin-top: 10px;
+            font-size: 1em;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .footer {
+            margin-top: 20px;
+        }
+
+        #play-audio {
+            padding: 10px 20px;
+            background-color: #6a2c8a;
+            border: none;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        #play-audio:hover {
+            background-color: #d79be1;
+        }
+
+        #mute-button {
+            padding: 10px 20px;
+            background-color: #6a2c8a;
+            border: none;
+            color: white;
+            font-size: 1em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        #mute-button:hover {
+            background-color: #d79be1;
+        }
+
+        /* Animations */
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 5px #ff7ec6, 0 0 10px #ff7ec6, 0 0 15px #ff7ec6, 0 0 20px #ff7ec6;
+            }
+            100% {
+                text-shadow: 0 0 10px #ff7ec6, 0 0 20px #ff7ec6, 0 0 30px #ff7ec6, 0 0 40px #ff7ec6;
+            }
+        }
+    </style>
 </head>
 <body>
     <div class="card-container">
@@ -14,15 +133,15 @@
             <!-- Hidden Birthday Message -->
             <p class="message" id="birthday-message" style="display: none;">🎉🎂 ¡Feliz 19º cumpleaños, Bri! 🎂🎉
 
-¡Wow, no puedo creer que ya tengas 19 años! re legal ahora😏🤣 💖 ¡Parece que fue ayer cuando nos reíamos juntas por cosas tontas, y ahora estás convirtiéndote en una persona increíble, fuerte y hermosa! 🌟
+                ¡Wow, no puedo creer que ya tengas 19 años! re legal ahora😏🤣 💖 ¡Parece que fue ayer cuando nos reíamos juntas por cosas tontas, y ahora estás convirtiéndote en una persona increíble, fuerte y hermosa! 🌟
 
-Soy tan afortunada de tenerte en mi vida, ¡haces cada día más brillante con tu amabilidad, tu sentido del humor y tu corazón tan grande! 🥰 Te mereces toda la felicidad, el amor y el éxito del mundo hoy y siempre. 💕 Que este año te traiga aventuras inolvidables, risas que llenen tu alma y recuerdos que duren toda la vida. ✨🌍
+                Soy tan afortunada de tenerte en mi vida, ¡haces cada día más brillante con tu amabilidad, tu sentido del humor y tu corazón tan grande! 🥰 Te mereces toda la felicidad, el amor y el éxito del mundo hoy y siempre. 💕 Que este año te traiga aventuras inolvidables, risas que llenen tu alma y recuerdos que duren toda la vida. ✨🌍
 
-Recuerda, sin importar a dónde te lleve la vida, siempre estaré aquí, apoyándote y celebrando cada paso del camino. 🎈👯‍♀️
+                Recuerda, sin importar a dónde te lleve la vida, siempre estaré aquí, apoyándote y celebrando cada paso del camino. 🎈👯‍♀️
 
-Te deseo un año increíble por delante, lleno de sueños cumplidos, amor y alegría sin fin. 🥳 ¡Vas a hacer cosas increíbles, estoy segura de ello! 💪
+                Te deseo un año increíble por delante, lleno de sueños cumplidos, amor y alegría sin fin. 🥳 ¡Vas a hacer cosas increíbles, estoy segura de ello! 💪
 
-¡Te quiero hasta la luna y de regreso! 🚀💖</p>
+                ¡Te quiero hasta la luna y de regreso! 🚀💖</p>
             <div class="quote">
                 <p>"May your birthday be the start of a year filled with happiness, love, and amazing memories!"</p>
             </div>
@@ -48,141 +167,41 @@ Te deseo un año increíble por delante, lleno de sueños cumplidos, amor y aleg
             <audio id="birthday-audio" src="https://www.bensound.com/bensound-music/bensound-happiness.mp3"></audio>
         </div>
     </div>
-    
-    <script src="script.js"></script>
+
+    <script>
+        // Function to reveal the birthday message when the button is clicked
+        document.getElementById('reveal-btn').addEventListener('click', function() {
+            document.getElementById('birthday-message').style.display = 'block';  // Show the birthday message
+            document.getElementById('reveal-btn').style.display = 'none';  // Hide the reveal button after click
+        });
+
+        // Function to display the user's input message
+        function displayMessage() {
+            const userMessage = document.getElementById('message-input').value;
+            document.getElementById('personal-message').textContent = userMessage;
+            document.getElementById('message-input').value = '';  // Clear the input field
+        }
+
+        // Function to play the birthday song sound
+        document.getElementById('play-audio').addEventListener('click', function() {
+            const audio = document.getElementById('birthday-audio');
+            audio.play();
+        });
+
+        // Function to mute/unmute the audio
+        let isMuted = false;  // Track the mute state
+        document.getElementById('mute-button').addEventListener('click', function() {
+            const audio = document.getElementById('birthday-audio');
+            if (isMuted) {
+                audio.muted = false;  // Unmute the audio
+                isMuted = false;
+                this.textContent = 'Mute';  // Change button text to "Mute"
+            } else {
+                audio.muted = true;  // Mute the audio
+                isMuted = true;
+                this.textContent = 'Unmute';  // Change button text to "Unmute"
+            }
+        });
+    </script>
 </body>
 </html>
-<style>* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f9f1f6;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    overflow: hidden;
-}
-
-.card-container {
-    background: linear-gradient(to right, #f8c9e6, #d4b1e1);
-    border-radius: 20px;
-    padding: 30px;
-    width: 90%;
-    max-width: 600px;
-    text-align: center;
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
-    position: relative;
-    overflow: hidden;
-}
-
-.card-content h1 {
-    font-family: 'Dancing Script', cursive;
-    font-size: 3em;
-    color: #6a2c8a;
-    margin-bottom: 20px;
-    animation: glow 1.5s ease-in-out infinite alternate;
-}
-
-.card-content p, .quote p {
-    font-family: 'Quicksand', sans-serif;
-    font-size: 1.2em;
-    color: #4a4a4a;
-    margin-bottom: 15px;
-}
-
-.reveal-message-btn {
-    padding: 10px 20px;
-    background-color: #d79be1;
-    border: none;
-    color: white;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.reveal-message-btn:hover {
-    background-color: #6a2c8a;
-}
-
-.personal-message {
-    margin-top: 20px;
-    display: none;
-}
-
-.personal-message input {
-    width: 80%;
-    padding: 8px;
-    margin-top: 10px;
-    font-size: 1em;
-    border-radius: 5px;
-    border: 1px solid #ccc;
-}
-
-.footer {
-    margin-top: 20px;
-}
-
-#play-audio {
-    padding: 10px 20px;
-    background-color: #6a2c8a;
-    border: none;
-    color: white;
-    font-size: 1em;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-#play-audio:hover {
-    background-color: #d79be1;
-}
-
-/* Animations */
-@keyframes glow {
-    0% {
-        text-shadow: 0 0 5px #ff7ec6, 0 0 10px #ff7ec6, 0 0 15px #ff7ec6, 0 0 20px #ff7ec6;
-    }
-    100% {
-        text-shadow: 0 0 10px #ff7ec6, 0 0 20px #ff7ec6, 0 0 30px #ff7ec6, 0 0 40px #ff7ec6;
-    }
-}
-</style><script>// Function to reveal the birthday message when the button is clicked
-document.getElementById('reveal-btn').addEventListener('click', function() {
-    document.getElementById('birthday-message').style.display = 'block';  // Show the birthday message
-    document.getElementById('reveal-btn').style.display = 'none';  // Hide the reveal button after click
-});
-
-// Function to display the user's input message
-function displayMessage() {
-    const userMessage = document.getElementById('message-input').value;
-    document.getElementById('personal-message').textContent = userMessage;
-    document.getElementById('message-input').value = '';  // Clear the input field
-}
-
-// Function to play the birthday song sound
-document.getElementById('play-audio').addEventListener('click', function() {
-    const audio = document.getElementById('birthday-audio');
-    audio.play();
-});
-
-// Function to mute/unmute the audio
-let isMuted = false;  // Track the mute state
-document.getElementById('mute-button').addEventListener('click', function() {
-    const audio = document.getElementById('birthday-audio');
-    if (isMuted) {
-        audio.muted = false;  // Unmute the audio
-        isMuted = false;
-        this.textContent = 'Mute';  // Change button text to "Mute"
-    } else {
-        audio.muted = true;  // Mute the audio
-        isMuted = true;
-        this.textContent = 'Unmute';  // Change button text to "Unmute"
-    }
-});
-</script>
