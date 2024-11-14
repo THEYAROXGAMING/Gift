@@ -6,7 +6,6 @@
     <title>Birthday Card</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Quicksand:wght@500&family=Dancing+Script&display=swap" rel="stylesheet">
     <style>
-        /* Reset and Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -21,14 +20,14 @@
             align-items: center;
             height: 100vh;
             overflow: hidden;
+            padding: 20px;
         }
 
-        /* Card Styles */
         .card-container {
             background: linear-gradient(to right, #f8c9e6, #d4b1e1);
             border-radius: 20px;
-            padding: 30px;
-            width: 90%;
+            padding: 20px;
+            width: 100%;
             max-width: 600px;
             text-align: center;
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
@@ -38,17 +37,22 @@
 
         .card-content h1 {
             font-family: 'Dancing Script', cursive;
-            font-size: 3em;
+            font-size: 2.5em;
             color: #6a2c8a;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             animation: glow 1.5s ease-in-out infinite alternate;
         }
 
         .card-content p, .quote p {
             font-family: 'Quicksand', sans-serif;
-            font-size: 1.2em;
+            font-size: 1.1em;
             color: #4a4a4a;
-            margin-bottom: 15px;
+            margin-bottom: 10px;
+        }
+
+        .quote p {
+            font-style: italic;
+            color: #6a2c8a;
         }
 
         .reveal-message-btn {
@@ -60,6 +64,7 @@
             cursor: pointer;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            margin-top: 15px;
         }
 
         .reveal-message-btn:hover {
@@ -67,7 +72,7 @@
         }
 
         .personal-message {
-            margin-top: 20px;
+            margin-top: 15px;
             display: none;
         }
 
@@ -81,10 +86,10 @@
         }
 
         .footer {
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
-        #play-audio {
+        #play-audio, #mute-button {
             padding: 10px 20px;
             background-color: #6a2c8a;
             border: none;
@@ -93,25 +98,10 @@
             cursor: pointer;
             border-radius: 5px;
             transition: background-color 0.3s ease;
+            margin: 5px;
         }
 
-        #play-audio:hover {
-            background-color: #d79be1;
-        }
-
-        #mute-button {
-            padding: 10px 20px;
-            background-color: #6a2c8a;
-            border: none;
-            color: white;
-            font-size: 1em;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-left: 10px;
-            transition: background-color 0.3s ease;
-        }
-
-        #mute-button:hover {
+        #play-audio:hover, #mute-button:hover {
             background-color: #d79be1;
         }
 
@@ -131,7 +121,8 @@
         <div class="card-content">
             <h1 class="greeting">Happy Birthday, Briii!</h1>
             <!-- Hidden Birthday Message -->
-            <p class="message" id="birthday-message" style="display: none;">🎉🎂 ¡Feliz 19º cumpleaños, Bri! 🎂🎉
+            <p class="message" id="birthday-message" style="display: none;">
+                🎉🎂 ¡Feliz 19º cumpleaños, Bri! 🎂🎉
 
                 ¡Wow, no puedo creer que ya tengas 19 años! re legal ahora😏🤣 💖 ¡Parece que fue ayer cuando nos reíamos juntas por cosas tontas, y ahora estás convirtiéndote en una persona increíble, fuerte y hermosa! 🌟
 
@@ -141,7 +132,8 @@
 
                 Te deseo un año increíble por delante, lleno de sueños cumplidos, amor y alegría sin fin. 🥳 ¡Vas a hacer cosas increíbles, estoy segura de ello! 💪
 
-                ¡Te quiero hasta la luna y de regreso! 🚀💖</p>
+                ¡Te quiero hasta la luna y de regreso! 🚀💖
+            </p>
             <div class="quote">
                 <p>"May your birthday be the start of a year filled with happiness, love, and amazing memories!"</p>
             </div>
@@ -167,7 +159,7 @@
             <audio id="birthday-audio" src="https://www.bensound.com/bensound-music/bensound-happiness.mp3"></audio>
         </div>
     </div>
-
+    
     <script>
         // Function to reveal the birthday message when the button is clicked
         document.getElementById('reveal-btn').addEventListener('click', function() {
